@@ -1,0 +1,6 @@
+---
+- hosts: pc
+  roles:
+
+    - role: base
+
