@@ -7,7 +7,7 @@ This repo contains the Ansible playbooks and configuration used to manage and au
 ### Install Ansible dependencies
 
 ```bash
-ansib
+ansible-galaxy install -r requirements.yml
 ```
 
 ## Provisioning

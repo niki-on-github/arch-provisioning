@@ -3,6 +3,7 @@ base_services:
   - NetworkManager
   - rngd
 
+
 base_packages:
   - arch-audit
   - bash-completion
