@@ -1,0 +1,114 @@
+base_wm:
+
+  services:
+    - acpid
+    - atd
+    - cronie
+
+
+  packages:
+    - acpid
+    - alacritty
+    - ansible
+    - at
+    - atool
+    - bc
+    - broot
+    - calcurse
+    - chafa
+    - cmatrix
+    - cowsay
+    - cronie
+    - easyeffects
+    - expect
+    - fd
+    - ffmpegthumbnailer
+    - figlet
+    - fzf
+    - fzy
+    - glances
+    - gpac
+    - grc
+    - gsettings-desktop-schemas
+    - gtop
+    - gvfs-smb
+    - gvfs
+    - hexedit
+    - highlight
+    - htop
+    - iftop
+    - imagemagick
+    - inotify-tools
+    - iotop
+    - jq
+    - lame
+    - libnotify
+    - libqalculate
+    - lolcat
+    - lsd
+    - mediainfo
+    - mp3info
+    - mp3splt
+    - mpc
+    - mpd
+    - mpv
+    - ncdu
+    - ncmpcpp
+    - neofetch
+    - neomutt
+    - neovim
+    - network-manager-applet
+    - networkmanager-openvpn
+    - newsboat
+    - nmap
+    - pamixer
+    - par2cmdline
+    - pass
+    - pavucontrol
+    - pdftk
+    - perl-file-mimeinfo
+    - pipewire
+    - pipewire-pulse
+    - playerctl
+    - pulsemixer
+    - python-eyed3
+    - python-pip
+    - python
+    - qt5
+    - qt5ct
+    - shellcheck
+    - smbnetfs
+    - sshfs
+    - syncthing
+    - tig
+    - tk
+    - tmux
+    - trash-cli
+    - tree
+    - udiskie
+    - udisks2
+    - v4l-utils
+    - vbindiff
+    - vulscan
+    - w3m
+    - weechat
+    - wmctrl
+    - wmname
+    - xcape
+    - xdg-utils
+    - yarn
+    - youtube-dl
+    - yq
+    - zathura-pdf-mupdf
+    - zathura
+
+
+  aur_packages:
+    - gencat
+    - j4-demenu-desktop
+    - lazygit
+    - lf
+
+
+  pip_packages:
+    - git+https://github.com/will8211/unimatrix.git

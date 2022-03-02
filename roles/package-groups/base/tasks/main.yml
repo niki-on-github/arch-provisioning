@@ -4,13 +4,14 @@
   include_role:
     name: system/install
   vars:
-    packages: "{{ base_packages }}"
-    pip_packages: "{{ base_pip_packages }}"
-    services: "{{ base_services }}"
+    packages: "{{ base.packages }}"
+    pip_packages: "{{ base.pip_packages }}"
+    services: "{{ base.services }}"
 
 
 - block:
   # root
+
   - name: "Updatedb"
     shell:
       cmd: updatedb

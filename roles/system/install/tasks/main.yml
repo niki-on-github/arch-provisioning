@@ -1,29 +1,43 @@
 ---
 
-- name: "Set packages to None"
-  set_fact:
-    packages: null
-  when: packages is not defined
+- block:
+  # setup
 
-- name: "Set pip packages to None"
-  set_fact:
-    pip_packages: null
-  when: pip_packages is not defined
+  - name: "Set packages to None"
+    set_fact:
+      packages: null
+    when: packages is not defined
 
-- name: "Set services to None"
-  set_fact:
-    services: null
-  when: services is not defined
+  - name: "Set AUR packages to None"
+    set_fact:
+      aur_packages: null
+    when: aur_packages is not defined
+
+  - name: "Set pip packages to None"
+    set_fact:
+      pip_packages: null
+    when: pip_packages is not defined
+
+  - name: "Set services to None"
+    set_fact:
+      services: null
+    when: services is not defined
 
 
 - block:
-  # root
+  # root install
 
   - name: 'Install packages'
     package:
       name: "{{ packages }}"
       state: latest
     when: packages
+
+  - name: "Install AUR packages"
+    kewlfft.aur.aur:
+      name: "{{ aur_packages }}"
+    become_user: aur_builder
+    when: aur_packages
 
   - name: 'Install pip packages for root'
     pip:
@@ -41,8 +55,9 @@
 
   become: yes
 
+
 - block:
-  # user
+  # user install
 
   - name: 'Install pip packages for user'
     pip:

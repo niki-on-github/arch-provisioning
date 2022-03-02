@@ -3,4 +3,5 @@
   roles:
 
     - role: package-groups/base
+    - role: package-groups/apps
 
