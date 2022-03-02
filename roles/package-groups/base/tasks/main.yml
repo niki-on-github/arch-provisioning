@@ -1,0 +1,27 @@
+---
+
+- name: "Install base package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ base_packages }}"
+    pip_packages: "{{ base_pip_packages }}"
+    services: "{{ base_services }}"
+
+
+- block:
+  # root
+  - name: "Updatedb"
+    shell:
+      cmd: updatedb
+
+  become: yes
+
+
+- block:
+  # user
+
+  - name: "Initialize git lfs"
+    shell:
+      cmd: git lfs install >/dev/null 2>&1
+    failed_when: false

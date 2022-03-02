@@ -1,0 +1,51 @@
+---
+
+- name: "Set packages to None"
+  set_fact:
+    packages: null
+  when: packages is not defined
+
+- name: "Set pip packages to None"
+  set_fact:
+    pip_packages: null
+  when: pip_packages is not defined
+
+- name: "Set services to None"
+  set_fact:
+    services: null
+  when: services is not defined
+
+
+- block:
+  # root
+
+  - name: 'Install packages'
+    package:
+      name: "{{ packages }}"
+      state: latest
+    when: packages
+
+  - name: 'Install pip packages for root'
+    pip:
+      name: "{{ item }}"
+    with_items: "{{ pip_packages }}"
+    when: pip_packages
+
+  - name: 'Enable systemd services'
+    ansible.builtin.systemd:
+      name: '{{ item }}'
+      state: 'started'
+      enabled: 'yes'
+    with_items: "{{ services }}"
+    when: services
+
+  become: yes
+
+- block:
+  # user
+
+  - name: 'Install pip packages for user'
+    pip:
+      name: "{{ item }}"
+    with_items: "{{ pip_packages }}"
+    when: pip_packages
