@@ -1,0 +1,6 @@
+flatpak:
+
+  packages:
+    - flatpak
+    - flatpak-builder
+

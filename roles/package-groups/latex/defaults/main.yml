@@ -1,0 +1,15 @@
+latex:
+
+  packages:
+    - aspell-de
+    - asymptote
+    - biber
+    - languagetool
+    - libmythes
+    - mupdf
+    - mythes-de
+    - pandoc
+    - texlive-most
+    - xdotool
+    - zathura-pdf-mupdf
+    - zathura

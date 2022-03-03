@@ -1,0 +1,24 @@
+lang: "de_DE.UTF-8"
+keymap: "de-latin1"
+x11_keymap: "de pc105"
+
+de_kde:
+
+  packages:
+    - ark
+    - dolphin-plugins
+    - dolphin
+    - ffmpegthumbs
+    - gwenview
+    - kcalc
+    - kdebugsettings
+    - kdegraphics-thumbnailers
+    - kimageformats
+    - kompare
+    - konsole
+    - ksysguard
+    - kwrite
+    - okteta
+    - okular
+    - plasma-nm
+    - plasma

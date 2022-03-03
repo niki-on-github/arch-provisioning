@@ -1,0 +1,5 @@
+cd2mp3:
+
+  packages:
+    - asunder
+    - lame

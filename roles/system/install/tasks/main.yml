@@ -46,7 +46,7 @@
     when: pip_packages
 
   - name: 'Enable systemd services'
-    ansible.builtin.systemd:
+    systemd:
       name: '{{ item }}'
       state: 'started'
       enabled: 'yes'

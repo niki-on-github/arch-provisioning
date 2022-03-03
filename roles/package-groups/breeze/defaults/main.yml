@@ -1,0 +1,8 @@
+breeze:
+
+  packages:
+    - breeze-gtk
+    - breeze-icons
+    - breeze
+
+
