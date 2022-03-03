@@ -1,0 +1,8 @@
+vbox_guest:
+
+  services:
+    - vboxservice
+
+  packages:
+    - virtualbox-guest-dkms
+    - virtualbox-guest-utils

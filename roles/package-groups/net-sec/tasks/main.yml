@@ -1,0 +1,14 @@
+---
+
+- name: "Install net_sec package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ net_sec.packages }}"
+
+- name: 'Add users to wireshark group'
+  user:
+    name: '{{ username }}'
+    groups: 'wireshark'
+    append: 'yes'
+  become: yes

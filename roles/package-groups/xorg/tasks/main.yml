@@ -1,0 +1,24 @@
+---
+
+- name: "Install xorg package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ xorg.packages }}"
+
+- block:
+  # root
+
+  - name: "Set keymap to {{ keymap }}"
+    shell:
+      cmd: "localectl set-keymap {{ keymap }}"
+
+  - name: "Set x11 keymap to {{ x11_keymap }}"
+    shell:
+      cmd: "localectl set-x11-keymap {{ x11_keymap }}"
+
+  - name: "Set locale to {{ lang }}"
+    shell:
+      cmd: "localectl set-locale LANG={{ lang }}"
+
+  become: yes

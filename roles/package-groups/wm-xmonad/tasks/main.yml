@@ -1,0 +1,16 @@
+---
+
+- name: "Install wm-xmonad package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ wm_xmonad.packages }}"
+
+- name: "Setup xmonad recompile hook"
+  copy:
+    src: "{{ role_path }}/files/recompile-xmonad.hook"
+    dest: /etc/pacman.d/hooks/recompile-xmonad.hook
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes

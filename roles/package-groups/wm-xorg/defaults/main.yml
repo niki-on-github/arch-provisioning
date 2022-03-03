@@ -1,0 +1,25 @@
+wm_xorg:
+
+
+  packages:
+    - clipmenu
+    - clipnotify
+    - dunst
+    - feh
+    - maim
+    - rofi
+    - sxiv
+    - xautolock
+    - xclip
+    - xdialog
+    - xdo
+    - xdotool
+
+
+  aur_packages:
+    - dragon-drag-and-drop
+    - i3lock-color
+    - picom-jonaburg-git
+    - xcolor
+    - xidlehook
+    - xob

@@ -1,0 +1,12 @@
+printer:
+
+  services:
+    - org.cups.cupsd
+
+  packages:
+    - cups-pdf
+    - cups
+    - ghostscript
+    - gscan2pdf
+    - gutenprint
+    - system-config-printer

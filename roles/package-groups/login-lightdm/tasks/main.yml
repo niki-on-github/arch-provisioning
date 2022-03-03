@@ -1,0 +1,8 @@
+---
+
+- name: "Install login-lightdm package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ login_lightdm.packages }}"
+    services: "{{ login_lightdm.services }}"

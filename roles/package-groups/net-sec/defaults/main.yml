@@ -1,0 +1,17 @@
+net_sec:
+
+  packages:
+    - aircrack-ng
+    - bettercap
+    - hashcat-utils
+    - hashcat
+    - hping
+    - hydra
+    - john
+    - kismet
+    - macchanger
+    - metasploit
+    - nikto
+    - nmap
+    - vulscan
+    - wireshark-qt

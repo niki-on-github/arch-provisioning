@@ -1,0 +1,23 @@
+---
+
+- name: "Install login-sddm package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ login_sddm.packages }}"
+    services: "{{ login_sddm.services }}"
+
+- name: "Install theme"
+  git:
+    repo: 'https://github.com/niki-on-github/simple-login-sddm-theme'
+    dest: /usr/share/sddm/themes/simple-login
+  become: yes
+
+- name: "Copy sddm config"
+  copy:
+    src: "{{ role_path }}/files/sddm.conf"
+    dest: /etc/sddm.conf
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes

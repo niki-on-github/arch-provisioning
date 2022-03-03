@@ -1,0 +1,13 @@
+wm_wayland:
+
+
+  packages:
+    - grim
+    - libappindicator-gtk3
+    - mako
+    - slurp
+
+
+  aur_packages:
+    - clipman
+

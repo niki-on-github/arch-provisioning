@@ -1,0 +1,6 @@
+zsh:
+
+  packages:
+    - fzf
+    - zsh-completions
+    - zsh

@@ -1,0 +1,30 @@
+lang: "de_DE.UTF-8"
+keymap: "de-latin1"
+x11_keymap: "de pc105"
+
+de_xfce:
+
+  services:
+    - cronie
+
+  packages:
+    - cronie
+    - engrampa
+    - gnome-keyring
+    - gvfs-smb
+    - gvfs
+    - network-manager-applet
+    - networkmanager-openvpn
+    - pavucontrol
+    - pipewire
+    - pipewire-pulse
+    - ristretto
+    - sshfs
+    - thunar-archive-plugin
+    - thunar
+    - xfce4-clipman-plugin
+    - xfce4-notifyd
+    - xfce4-pulseaudio-plugin
+    - xfce4
+    - xorg-server
+    - xorg-xrandr

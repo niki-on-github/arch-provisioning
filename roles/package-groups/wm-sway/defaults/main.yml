@@ -1,0 +1,8 @@
+wm_sway:
+
+  packages:
+    - sway
+    - swaybg
+    - swayidle
+    - swaylock
+    - waybar

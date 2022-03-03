@@ -1,0 +1,10 @@
+lxc:
+
+
+  services:
+    - lxc
+
+
+  packages:
+    - lxc
+    - lxd

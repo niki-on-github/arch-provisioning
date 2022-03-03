@@ -1,0 +1,7 @@
+---
+
+- name: "Install nextcloud-client package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ nextcloud_client.packages }}"

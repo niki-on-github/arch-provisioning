@@ -1,4 +1,4 @@
-base_wm:
+wm_base:
 
   services:
     - acpid

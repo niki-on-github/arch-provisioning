@@ -1,0 +1,18 @@
+---
+
+- name: "Install vbox-host package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ vbox_host.packages }}"
+    aur_packages: "{{ vbox_host.aur_packages }}"
+
+- name: 'Add users to vboxuser, vboxsf group'
+  user:
+    name: '{{ username }}'
+    groups: '{{ item }}'
+    append: 'yes'
+  with_items:
+    - vboxusers
+    - vboxsf
+  become: yes

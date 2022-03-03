@@ -1,0 +1,35 @@
+---
+
+- name: "Install login-greetd package group"
+  include_role:
+    name: system/install
+  vars:
+    aur_packages:
+      - greetd
+
+
+- block:
+  - name: "Set user"
+    replace:
+      path: /etc/greetd/config.toml
+      regexp: '^user = .*$'
+      replace: 'user = "{{ username }}"'
+
+  - name: "Set command"
+    replace:
+      path: /etc/greetd/config.toml
+      regexp: '^command = .*$'
+      replace: 'command = "tuigreet --cmd startx"'
+
+  become: yes
+
+
+# After config.toml changes:
+- name: "Install login-greetd package group"
+  include_role:
+    name: system/install
+  vars:
+    aur_packages:
+      - tuigreet
+    services:
+      - greetd

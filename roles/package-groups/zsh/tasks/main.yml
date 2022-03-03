@@ -1,0 +1,13 @@
+---
+
+- name: "Install zsh package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ zsh.packages }}"
+
+- name: "change user shell to zsh"
+  user:
+    name: "{{ username }}"
+    shell: /usr/bin/zsh
+  become: yes

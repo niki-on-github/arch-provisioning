@@ -1,0 +1,16 @@
+---
+
+- name: "Install lxd package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ lxd.packages }}"
+    services: "{{ lxd.services }}"
+
+
+- name: 'Add users to lxd group'
+  user:
+    name: '{{ username }}'
+    groups: 'lxd'
+    append: 'yes'
+  become: yes

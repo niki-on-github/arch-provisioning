@@ -1,0 +1,7 @@
+---
+
+- name: "Install thunar package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ thunar.packages }}"

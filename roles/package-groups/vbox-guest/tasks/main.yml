@@ -1,0 +1,18 @@
+---
+
+- name: "Install vbox-guest package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ vbox_guest.packages }}"
+    service: "{{ vbox_guest.service }}"
+
+- name: 'Add users to vboxuser, vboxsf group'
+  user:
+    name: '{{ username }}'
+    groups: '{{ item }}'
+    append: 'yes'
+  with_items:
+    - vboxusers
+    - vboxsf
+  become: yes

@@ -1,0 +1,8 @@
+vbox_host:
+
+  packages:
+    - vagrant
+    - virtualbox
+
+  aur_packages:
+    - virtualbox-ext-oracle

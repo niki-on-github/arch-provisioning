@@ -1,0 +1,10 @@
+---
+
+- name: "Install wm-base package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ wm_base.packages }}"
+    aur_packages: "{{ wm_base.aur_packages }}"
+    pip_packages: "{{ wm_base.pip_packages }}"
+    services: "{{ wm_base.services }}"
