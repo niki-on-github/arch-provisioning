@@ -33,7 +33,6 @@ base:
     - man-pages
     - mlocate
     - mkcert
-    - nano
     - neovim
     - net-tools
     - networkmanager

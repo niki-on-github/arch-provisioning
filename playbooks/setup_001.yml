@@ -1,0 +1,21 @@
+---
+- hosts: pc
+  roles:
+
+    - role: system/precondition
+    - role: package-groups/apps
+    - role: package-groups/base
+    - role: package-groups/breeze
+    - role: package-groups/disk-monitoring
+    - role: package-groups/docker
+    - role: package-groups/flatpak
+    - role: package-groups/font
+    - role: package-groups/kvm-host
+    - role: package-groups/login-sddm
+    - role: package-groups/printer
+    - role: package-groups/printer
+    - role: package-groups/wm-base
+    - role: package-groups/wm-xorg
+    - role: package-groups/xorg
+    - role: package-groups/zsh
+

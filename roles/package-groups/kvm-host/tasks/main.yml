@@ -50,6 +50,7 @@
         - virt-manager
         - virt-viewer
       state: latest
+    when: install_kvm_gui
 
   - name: 'Add users to kvm groups'
     user:
