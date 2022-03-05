@@ -13,5 +13,5 @@ ansible-galaxy install -r requirements.yml
 ## Provisioning
 
 ```bash
-ansible-playbook -i ./inventory/localhost ./playbooks/base.yml -K
+ansible-playbook -i ./inventory/localhost ./playbooks/setup_001.yml -K
 ```
