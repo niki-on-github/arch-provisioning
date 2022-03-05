@@ -1,0 +1,10 @@
+---
+- hosts: pc
+  roles:
+
+    - role: system/precondition
+    - role: package-groups/xorg
+    - role: package-groups/wm-base
+    - role: package-groups/wm-xorg
+    - role: package-groups/wm-i3
+

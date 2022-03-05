@@ -1,0 +1,8 @@
+---
+- hosts: pc
+  roles:
+
+    - role: system/precondition
+    - role: package-groups/wm-base
+    - role: package-groups/wm-wayland
+

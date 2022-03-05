@@ -3,5 +3,5 @@
   roles:
 
     - role: system/precondition
-    - role: package-groups/base
+    - role: package-groups/login-lightdm
 
