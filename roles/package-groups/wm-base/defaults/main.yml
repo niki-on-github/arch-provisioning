@@ -103,7 +103,6 @@ wm_base:
 
 
   aur_packages:
-    - gencat
     - j4-demenu-desktop
     - lazygit
     - lf
