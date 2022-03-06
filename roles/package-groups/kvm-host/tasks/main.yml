@@ -91,16 +91,6 @@
       - 'pmlogger.service'
       - 'podman.socket'
 
-  - name: 'Create KVM directories'
-    file:
-      dest: "{{ item }}"
-      state: directory
-      owner: "{{ username }}"
-      group: "{{ gid }}"
-      recurse: yes
-    with_items:
-       -  "{{ vagrant_recipes }}"
-
   - name: "Fetch Vagrant Plugin List for root"
     command: vagrant plugin list
     register: vagrant_plugin_list
