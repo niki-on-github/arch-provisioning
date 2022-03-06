@@ -20,6 +20,6 @@ apps:
   aur_packages:
     - rbw-git
     - brave-bin
-    - spotify-adblock-git
+    # - spotify-adblock-git
     - visual-studio-code-bin
     - vopono-git
