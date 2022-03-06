@@ -1,10 +1,6 @@
 login_lightdm:
 
 
-  services:
-    - lightdm
-
-
   packages:
     - lightdm-gtk-greeter-settings
     - lightdm-gtk-greeter

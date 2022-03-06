@@ -5,4 +5,9 @@
     name: system/install
   vars:
     packages: "{{ login_lightdm.packages }}"
-    services: "{{ login_lightdm.services }}"
+
+- name: 'Enable lightdm systemd service'
+  systemd:
+    name: 'lighdm'
+    enabled: 'yes'
+  become: yes

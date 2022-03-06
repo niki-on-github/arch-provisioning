@@ -5,7 +5,6 @@
     name: system/install
   vars:
     packages: "{{ login_sddm.packages }}"
-    services: "{{ login_sddm.services }}"
 
 - name: "Install theme"
   git:
@@ -20,4 +19,10 @@
     owner: root
     group: root
     mode: '0755'
+  become: yes
+
+- name: 'Enable sddm systemd service'
+  systemd:
+    name: 'sddm'
+    enabled: 'yes'
   become: yes

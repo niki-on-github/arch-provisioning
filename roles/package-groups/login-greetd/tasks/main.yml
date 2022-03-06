@@ -31,5 +31,9 @@
   vars:
     aur_packages:
       - tuigreet
-    services:
-      - greetd
+
+- name: 'Enable greetd systemd service'
+  systemd:
+    name: 'greetd'
+    enabled: 'yes'
+  become: yes
