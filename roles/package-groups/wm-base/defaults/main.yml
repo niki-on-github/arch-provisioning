@@ -103,8 +103,7 @@ wm_base:
 
 
   aur_packages:
-    - lazygit
-    - lf
+    - lf-bin
 
 
   pip_packages:
