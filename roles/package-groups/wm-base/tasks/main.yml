@@ -6,6 +6,7 @@
     state: absent
   with_items:
     - "docopt"
+  become: yes
 
 - name: "Install wm-base package group"
   include_role:
