@@ -1,5 +1,12 @@
 ---
 
+- name: 'Uninstall conflicting Python Packages'
+  pip:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - "docopt"
+
 - name: "Install wm-base package group"
   include_role:
     name: system/install
