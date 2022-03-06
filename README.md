@@ -4,6 +4,12 @@ This repo contains the Ansible playbooks and configuration used to manage and au
 
 ## Setup
 
+### Install ansible
+
+```bash
+sudo pacman -Sy ansible
+```
+
 ### Install Ansible dependencies
 
 ```bash
