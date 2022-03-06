@@ -30,12 +30,12 @@
 
   - name: 'rustup install stable for aur_builder user'
     shell: |
-      lsblk rustup install stable
+      rustup install stable
     become_user: aur_builder
 
   - name: 'rustup set stable as default for aur_builder user'
     shell: |
-      lsblk rustup default stable
+      rustup default stable
     become_user: aur_builder
 
   become: yes
