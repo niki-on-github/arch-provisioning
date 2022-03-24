@@ -92,6 +92,12 @@
       - 'pmlogger.service'
       - 'podman.socket'
 
+  - name: "Fix libvirt-guests"
+    replace:
+      path: /usr/lib/libvirt/libvirt-guests.sh
+      regexp: '(^ON_SHUTDOWN=)(.*)$'
+      replace: '\1"shutdown"'
+
   - name: "Fetch Vagrant Plugin List for root"
     command: vagrant plugin list
     register: vagrant_plugin_list
