@@ -96,7 +96,7 @@ wm_base:
     - xcape
     - xdg-utils
     - yarn
-    - youtube-dl
+    - yt-dl
     - yq
     - zathura-pdf-mupdf
     - zathura
