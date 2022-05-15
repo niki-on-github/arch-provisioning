@@ -7,6 +7,7 @@ KEYMAP="de-latin1"
 X11_KEYMAP="de pc105"
 LOCALTIME="/usr/share/zoneinfo/Europe/Berlin"
 HOSTNAME="vagrant-arch"
+USERNAME="vagrant"
 
 setup_timezone() {
     rm -f /etc/localtime
@@ -48,7 +49,7 @@ resize_disk() {
 }
 
 setup_linux() {
-    pacman --noconfirm --needed -S linux linux-headers sudo haveged
+    pacman --noconfirm --needed -S linux linux-headers base-devel sudo haveged
     systemctl enable haveged
 }
 
@@ -66,6 +67,19 @@ virtmanager_guest_utils() {
     systemctl enable qemu-guest-agent.service
 }
 
+install_paru() {
+    sudo -u $USERNAME mkdir -p /home/$USERNAME/.config # avoid config directory created by root
+    pacman --noconfirm --needed -S rustup git
+    sudo -u $USERNAME rustup install stable
+    sudo -u $USERNAME rustup default stable
+    sudo -u $USERNAME git clone https://aur.archlinux.org/paru.git /tmp/paru
+    pushd /tmp/paru
+    sudo -u $USERNAME makepkg --noconfirm -si
+    popd
+    sudo -u $USERNAME paru --noconfirm -Syu
+    sed -i 's/^#MAKEFLAGS=.*$/MAKEFLAGS="-j$(expr $(nproc) \+ 1)"/g' /etc/makepkg.conf
+    return 0
+}
 
 
 # MAIN
@@ -76,4 +90,5 @@ resize_disk
 setup_linux
 network_settings
 virtmanager_guest_utils
+install_paru
 exit 0

@@ -2,6 +2,7 @@
 # vi: set ft=ruby :
 
 # Usage:
+#   vagrant box update --box archlinux/archlinux
 #   vagrant up
 
 require 'yaml'
@@ -18,6 +19,7 @@ end
 
 Vagrant.configure("2") do |config|
 
+  # update image with: "vagrant box update --box archlinux/archlinux"
   config.vm.box = "archlinux/archlinux"
   config.vm.box_check_update = false
   config.vm.synced_folder ".", "/vagrant", type: "rsync"
@@ -40,6 +42,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :ansible do |ansible|
     ansible.verbose = "v"
-    ansible.playbook = "./playbooks/setup_001.yml"
+    ansible.galaxy_role_file = 'requirements.yml'
+    ansible.playbook = "./playbooks/test_001.yml"
   end
 end
