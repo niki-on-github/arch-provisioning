@@ -1,0 +1,4 @@
+wm_qtile:
+
+  packages:
+    - qtile

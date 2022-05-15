@@ -1,0 +1,7 @@
+---
+
+- name: "Install wm-qtile package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ wm_qtile.packages }}"
