@@ -13,7 +13,6 @@
     - role: package-groups/kvm-host
     - role: package-groups/login-sddm
     - role: package-groups/printer
-    - role: package-groups/printer
     - role: package-groups/wm-base
     - role: package-groups/wm-xorg
     - role: package-groups/xorg
