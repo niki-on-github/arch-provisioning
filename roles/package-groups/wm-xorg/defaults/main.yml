@@ -17,7 +17,7 @@ wm_xorg:
 
 
   aur_packages:
-    - dragon-drag-and-drop
+    - dragon-drop
     - i3lock-color
     - picom-jonaburg-git
     - xcolor
