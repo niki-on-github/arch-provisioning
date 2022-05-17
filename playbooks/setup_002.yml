@@ -1,0 +1,7 @@
+---
+- hosts: pc
+  roles:
+
+    - role: system/precondition
+    - role: package-groups/docker
+

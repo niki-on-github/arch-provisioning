@@ -27,28 +27,28 @@
 
   - name: "hypervisor check"
     shell: "grep -q '^flags.* hypervisor' /proc/cpuinfo"
-    register: inside_vm
-    ignore_errors: 'yes'
+    register: "inside_vm"
+    ignore_errors: true
 
   - name: 'Enable docker systemd service'
     ansible.builtin.systemd:
       name: 'docker'
       state: 'started'
       enabled: 'yes'
-    ignore_errors: "inside_vm.rc in [0]"
+    when: inside_vm.rc != 0
 
   - name: 'Create default docker-bridge network'
     docker_network:
       name: docker-bridge
-    ignore_errors: "inside_vm.rc in [0]"
+    when: inside_vm.rc != 0
 
   - name: 'Create default isolated network'
     docker_network:
       name: isolated
       internal: yes
-    ignore_errors: "inside_vm.rc in [0]"
+    when: inside_vm.rc != 0
 
-  become: yes
+  become: 'yes'
 
 
 - block:
