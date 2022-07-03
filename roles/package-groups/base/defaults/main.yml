@@ -69,6 +69,7 @@ base:
     - wget
     - whois
     - wireguard-tools
+    - wol
     - xdg-user-dirs
     - zip
 
