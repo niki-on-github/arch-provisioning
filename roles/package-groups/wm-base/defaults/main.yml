@@ -35,6 +35,7 @@ wm_base:
     - hexedit
     - highlight
     - htop
+    - icoutils
     - iftop
     - imagemagick
     - inotify-tools
