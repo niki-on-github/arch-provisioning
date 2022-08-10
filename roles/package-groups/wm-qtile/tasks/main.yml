@@ -5,3 +5,4 @@
     name: system/install
   vars:
     packages: "{{ wm_qtile.packages }}"
+    pip_packages: "{{ wm_qtile.pip_packages }}"

@@ -1,0 +1,11 @@
+vmware_guest:
+
+  services:
+    - vmtoolsd
+    - vmware-vmblock-fuse
+
+  packages:
+    - mesa
+    - xf86-video-vmware
+    - xorg-xev
+    - open-vm-tools

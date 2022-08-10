@@ -7,7 +7,7 @@ This repo contains the Ansible playbooks and configuration used to manage and au
 ### Install ansible
 
 ```bash
-sudo pacman -Sy ansible
+sudo pacman -Sy ansible python-pip
 ```
 
 ### Install Ansible dependencies

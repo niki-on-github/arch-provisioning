@@ -2,3 +2,7 @@ wm_qtile:
 
   packages:
     - qtile
+
+  pip_packages:
+    - screeninfo
+    - mypy
