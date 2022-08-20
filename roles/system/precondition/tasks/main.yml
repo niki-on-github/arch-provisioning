@@ -12,7 +12,13 @@
       msg: "/home/{{ username }} does not exists"
     when: not user_home.stat.exists
 
-  - name: 'System update'
+  - name: 'System update #1'
+    package:
+      name:
+      - archlinux-keyring
+      state: latest
+
+  - name: 'System update #2'
     pacman:
       update_cache: yes
       upgrade: yes
