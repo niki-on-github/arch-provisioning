@@ -36,7 +36,7 @@
   - name: "Install AUR packages"
     kewlfft.aur.aur:
       name: "{{ aur_packages }}"
-    become_user: aur_builder
+    become_user: "{{ username }}"
     when: aur_packages
 
   - name: 'Install pip packages for root'
