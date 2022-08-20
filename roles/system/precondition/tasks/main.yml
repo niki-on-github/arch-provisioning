@@ -13,10 +13,10 @@
     when: not user_home.stat.exists
 
   - name: 'System update #1'
-    package:
-      name:
-      - archlinux-keyring
+    pacman:
+      name: 'archlinux-keyring'
       state: latest
+      update_cache: yes
 
   - name: 'System update #2'
     pacman:
