@@ -1,7 +1,6 @@
 ---
 - hosts: archlinux
   roles:
-
     - role: system/precondition
     - role: package-groups/apps
     - role: package-groups/base

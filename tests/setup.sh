@@ -26,8 +26,11 @@ setup_locale() {
 setup_pacman() {
     sed -i "s/^#Color/Color/" /etc/pacman.conf
     sed -i "s/^#ParallelDownloads.*$/ParallelDownloads = 4/g" /etc/pacman.conf
-    pacman-key --populate archlinux
-    pacman -Syy --noconfirm archlinux-keyring
+    if [ ! -f /.initialized ]; then
+        pacman-key --populate archlinux
+        pacman -Syy --noconfirm archlinux-keyring
+        touch ./initialized
+    fi
     pacman --noconfirm -Syyu
 }
 
@@ -55,7 +58,7 @@ setup_linux() {
 
 network_settings() {
    echo "$HOSTNAME" > /etc/hostname
-   echo "127.0.0.1 localhost" >> /etc/hosts
+   echo "127.0.0.1 localhost" > /etc/hosts
    echo "::1 localhost" >> /etc/hosts
    echo "127.0.0.1 $HOSTNAME.local $HOSTNAME" >> /etc/hosts
    pacman --noconfirm --needed -S networkmanager net-tools
@@ -68,6 +71,7 @@ virtmanager_guest_utils() {
 }
 
 install_paru() {
+    [ ! -d /tmp/paru ] || return
     sudo -u $USERNAME mkdir -p /home/$USERNAME/.config # avoid config directory created by root
     pacman --noconfirm --needed -S rustup git
     sudo -u $USERNAME rustup install stable

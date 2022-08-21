@@ -2,12 +2,12 @@
 - block:
   # root
 
-  - name: "Get user homse stat"
+  - name: "Get user home stat"
     stat:
       path: "/home/{{ username }}"
     register: user_home
 
-  - name: "Check if user homse exists"
+  - name: "Throw error if user homse not exists"
     fail:
       msg: "/home/{{ username }} does not exists"
     when: not user_home.stat.exists
