@@ -9,7 +9,7 @@
     - role: package-groups/docker
     - role: package-groups/flatpak
     - role: package-groups/font
-    - role: package-groups/kvm-host
+    # - role: package-groups/kvm-host wait until [#12843](https://github.com/hashicorp/vagrant/issues/12843) is fixed
     - role: package-groups/login-sddm
     - role: package-groups/latex
     - role: package-groups/printer
