@@ -1,5 +1,5 @@
 ---
-- hosts: testing
+- hosts: archlinux
   roles:
     - role: system/precondition
     - role: package-groups/apps
@@ -11,6 +11,7 @@
     - role: package-groups/font
     - role: package-groups/kvm-host
     - role: package-groups/login-sddm
+    - role: package-groups/latex
     - role: package-groups/printer
     - role: package-groups/wm-base
     - role: package-groups/wm-qtile

@@ -3,5 +3,5 @@
   roles:
 
     - role: system/precondition
-    - role: package-groups/vbox-guest
+    - role: package-groups/vmware-guest
 

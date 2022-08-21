@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
     ansible.verbose = "vv"
     ansible.limit = "all"
     ansible.playbook = "./playbooks/test_001.yml"
-    ansible.groups = { "testting" => ["default"] }
+    ansible.groups = { "archlinux" => ["default"] }
     ansible.extra_vars = { vagrant: true, username: "vagrant" }
   end
 end

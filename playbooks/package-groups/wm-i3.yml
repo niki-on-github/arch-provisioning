@@ -1,5 +1,5 @@
 ---
-- hosts: pc
+- hosts: archlinux
   roles:
 
     - role: system/precondition
