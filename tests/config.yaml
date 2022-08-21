@@ -6,8 +6,4 @@ configs:
     cpus: 6
     memory: 8192
     disksize: 50
-  config2:
-    name: 'arch-provision-test'
-    cpus: 4
-    memory: 8192
-    disksize: 40
+

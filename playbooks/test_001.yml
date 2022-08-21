@@ -1,7 +1,5 @@
 ---
-- hosts: all
-  vars:
-    username: "vagrant"
+- hosts: testing
   roles:
     - role: system/precondition
     - role: package-groups/apps

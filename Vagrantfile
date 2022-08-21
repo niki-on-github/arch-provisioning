@@ -13,10 +13,6 @@ current_dir = File.dirname(File.expand_path(__FILE__))
 configs = YAML.load_file("#{current_dir}/tests/config.yaml")
 vagrant_config = configs['configs'][configs['configs']['use']]
 
-unless Vagrant.has_plugin?("vagrant-libvirt")
-  raise  Vagrant::Errors::VagrantError.new, "vagrant-libvirt plugin is missing. Please install it using 'vagrant plugin install vagrant-libvirt' and rerun 'vagrant up'"
-end
-
 Vagrant.configure("2") do |config|
 
   # update image with: "vagrant box update --box archlinux/archlinux"
@@ -41,8 +37,11 @@ Vagrant.configure("2") do |config|
   SHELL
 
   config.vm.provision :ansible do |ansible|
-    ansible.verbose = "v"
-    ansible.galaxy_role_file = 'requirements.yml'
+    # ansible.galaxy_role_file = 'requirements.yml'
+    ansible.verbose = "vv"
+    ansible.limit = "all"
     ansible.playbook = "./playbooks/test_001.yml"
+    ansible.groups = { "testting" => ["default"] }
+    ansible.extra_vars = { vagrant: true, username: "vagrant" }
   end
 end
