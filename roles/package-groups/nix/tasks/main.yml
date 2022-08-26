@@ -28,6 +28,11 @@
       path: /etc/nix/nix.conf
       line: "experimental-features = nix-command flakes"
 
+  - name: "Enable nix parallel Jobs"
+    lineinfile:
+      path: /etc/nix/nix.conf
+      line: "max-jobs = auto"
+
   - name: "add nix-channel nixpkgs-unstable"
     shell:
       cmd: nix-channel --add https://nixos.org/channels/nixpkgs-unstable
