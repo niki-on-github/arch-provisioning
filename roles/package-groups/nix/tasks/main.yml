@@ -23,6 +23,11 @@
       groups: 'nix-users'
       append: 'yes'
 
+  - name: "Enable nix experimental-features"
+    lineinfile:
+      path: /etc/nix/nix.conf
+      line: "experimental-features = nix-command flakes"
+
   - name: "add nix-channel nixpkgs-unstable"
     shell:
       cmd: nix-channel --add https://nixos.org/channels/nixpkgs-unstable
