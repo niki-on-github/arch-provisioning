@@ -11,6 +11,7 @@ wm_base:
     - alacritty
     - ansible
     - at
+    - bat
     - bc
     - broot
     - calcurse
