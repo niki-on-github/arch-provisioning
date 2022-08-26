@@ -1,0 +1,34 @@
+---
+
+- name: "Install nix package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ nix.packages }}"
+    services: "{{ nix.services }}"
+
+
+- block:
+  # root
+
+  - name: 'Add users to nix-users group'
+    user:
+      name: '{{ username }}'
+      groups: 'nix-users'
+      append: 'yes'
+
+  - name: 'Add root to nix-users group'
+    user:
+      name: 'root'
+      groups: 'nix-users'
+      append: 'yes'
+
+  - name: "add nix-channel nixpkgs-unstable"
+    shell:
+      cmd: nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+
+  - name: "update nix-channel"
+    shell:
+      cmd: nix-channel --update
+
+  become: true
