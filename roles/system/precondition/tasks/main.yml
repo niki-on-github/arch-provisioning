@@ -7,7 +7,7 @@
       path: "/home/{{ username }}"
     register: user_home
 
-  - name: "Throw error if user homse not exists"
+  - name: "Throw error if user home not exists"
     fail:
       msg: "/home/{{ username }} does not exists"
     when: not user_home.stat.exists
