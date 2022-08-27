@@ -73,6 +73,7 @@ wm_base:
     - python
     - qt5
     - qt5ct
+    - sipcalc
     - shellcheck
     - smbnetfs
     - sshfs
