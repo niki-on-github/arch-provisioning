@@ -109,23 +109,38 @@
       - 'pmlogger.service'
       - 'podman.socket'
 
-  - name: "Fix libvirt-guests"
+  - name: "Fix libvirt-guests service"
     replace:
       path: /usr/lib/libvirt/libvirt-guests.sh
       regexp: '(^ON_SHUTDOWN=)(.*)$'
       replace: '\1"shutdown"'
 
+  - name: 'Create KVM directories'
+    file:
+      dest: "{{ item }}"
+      state: directory
+      owner: "{{ username }}"
+      group: "{{ gid }}"
+      recurse: no
+    with_items:
+       -  "{{ vagrant_recipes }}"
+    when: vagrant_recipes is defined
+
   - name: "Fetch Vagrant Plugin List for root"
-    raw:
-      cmd: vagrant plugin list
+    command: vagrant plugin list
+    args:
       executable: /bin/bash
+    environment:
+      PATH: '/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:{{ ansible_env.PATH }}'
     register: vagrant_plugin_list
     changed_when: "'libvirt' not in vagrant_plugin_list.stdout"
 
   - name: "Install vagrant-libvirt plugin for root"
-    raw:
-      cmd: vagrant plugin install vagrant-libvirt
+    command: vagrant plugin install vagrant-libvirt
+    args:
       executable: /bin/bash
+    environment:
+      PATH: '/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:{{ ansible_env.PATH }}'
     when: '"libvirt" not in vagrant_plugin_list.stdout'
 
   - name: 'Install KVM Python Packet for root'
@@ -142,16 +157,20 @@
   # user
 
   - name: "Fetch Vagrant Plugin List for user"
-    raw:
-      cmd: vagrant plugin list
+    command: vagrant plugin list
+    args:
       executable: /bin/bash
+    environment:
+      PATH: '/home/{{ username }}/.nix-profile/bin:/nix/var/nix/profiles/default/bin:{{ ansible_env.PATH }}'
     register: vagrant_plugin_list
     changed_when: "'libvirt' not in vagrant_plugin_list.stdout"
 
   - name: "Install vagrant-libvirt plugin for user"
-    raw:
-      cmd: vagrant plugin install vagrant-libvirt
+    command: vagrant plugin install vagrant-libvirt
+    args:
       executable: /bin/bash
+    environment:
+      PATH: '/home/{{ username }}/.nix-profile/bin:/nix/var/nix/profiles/default/bin:{{ ansible_env.PATH }}'
     when: '"libvirt" not in vagrant_plugin_list.stdout'
 
   - name: 'Install KVM Python Packet for user'
