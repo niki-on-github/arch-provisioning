@@ -67,7 +67,7 @@ EOL
 
 echo "Installation configuration:"
 cat ./playbooks/group_vars/*
-echo -e "\n"
+echo -e "--"
 
 ansible-playbook \
     -i ${tmp_dir}/inventory \

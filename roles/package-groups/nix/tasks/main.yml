@@ -41,4 +41,9 @@
     shell:
       cmd: nix-channel --update
 
+  # TODO: nix without restart
+  - name: "Show nix info"
+    debug:
+      msg: "nix installation require restart to get a working nix-env"
+
   become: true
