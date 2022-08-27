@@ -1,25 +1,3 @@
 lang: "de_DE.UTF-8"
 keymap: "de-latin1"
 x11_keymap: "de pc105"
-
-xorg:
-
-  packages:
-    - xorg-fonts
-    - xorg-server-common
-    - xorg-server-xephyr
-    - xorg-server-xwayland
-    - xorg-server
-    - xorg-setxkbmap
-    - xorg-xauth
-    - xorg-xdpyinfo
-    - xorg-xhost
-    - xorg-xinit
-    - xorg-xmodmap
-    - xorg-xprop
-    - xorg-xrandr
-    - xorg-xrdb
-    - xorg-xset
-    - xorg-xsetroot
-    - xorg-xwininfo
-    - xorgproto

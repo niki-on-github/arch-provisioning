@@ -1,0 +1,21 @@
+
+de_kde:
+
+  packages:
+    - ark
+    - dolphin-plugins
+    - dolphin
+    - ffmpegthumbs
+    - gwenview
+    - kcalc
+    - kdebugsettings
+    - kdegraphics-thumbnailers
+    - kimageformats
+    - kompare
+    - konsole
+    - ksysguard
+    - kwrite
+    - okteta
+    - okular
+    - plasma-nm
+    - plasma

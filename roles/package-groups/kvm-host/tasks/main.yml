@@ -109,10 +109,10 @@
       cmd: vagrant plugin install vagrant-libvirt
     when: '"libvirt" not in vagrant_plugin_list.stdout'
 
-  - name: "Install vagrant-mutate plugin for root"
-    ansible.builtin.shell:
-      cmd: vagrant plugin install vagrant-mutate
-    when: '"mutate" not in vagrant_plugin_list.stdout'
+  # - name: "Install vagrant-mutate plugin for root"
+  #   ansible.builtin.shell:
+  #     cmd: vagrant plugin install vagrant-mutate
+  #   when: '"mutate" not in vagrant_plugin_list.stdout'
 
   - name: 'Install KVM Python Packet for root'
     pip:
@@ -137,10 +137,10 @@
       cmd: vagrant plugin install vagrant-libvirt
     when: '"libvirt" not in vagrant_plugin_list.stdout'
 
-  - name: "Install vagrant-mutate plugin for user"
-    ansible.builtin.shell:
-      cmd: vagrant plugin install vagrant-mutate
-    when: '"mutate" not in vagrant_plugin_list.stdout'
+  # - name: "Install vagrant-mutate plugin for user"
+  #   ansible.builtin.shell:
+  #     cmd: vagrant plugin install vagrant-mutate
+  #   when: '"mutate" not in vagrant_plugin_list.stdout'
 
   - name: 'Install KVM Python Packet for user'
     pip:
