@@ -1,0 +1,7 @@
+---
+- hosts: archlinux
+  roles:
+
+    - role: system/precondition
+    - role: package-groups/modern-unix
+

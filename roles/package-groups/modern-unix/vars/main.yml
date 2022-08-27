@@ -1,0 +1,19 @@
+modern_unix:
+
+
+  packages:
+    - bat
+    - choose
+    - curlie
+    - dog
+    - duf
+    - dust
+    - fd
+    - fzf
+    - git-delta
+    - jq
+    - lsd
+    - procs
+    - ripgrep
+    - sd
+    - zoxide

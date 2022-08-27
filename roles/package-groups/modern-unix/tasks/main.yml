@@ -1,0 +1,9 @@
+---
+
+- name: "Install modern-unix package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ modern_unix.packages }}"
+
+
