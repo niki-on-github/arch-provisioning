@@ -2,13 +2,14 @@ xorg:
 
   packages:
     - xorg-fonts
+    - xorg-server
     - xorg-server-common
     - xorg-server-xephyr
     - xorg-server-xwayland
-    - xorg-server
     - xorg-setxkbmap
     - xorg-xauth
     - xorg-xdpyinfo
+    - xorg-xev
     - xorg-xhost
     - xorg-xinit
     - xorg-xmodmap
