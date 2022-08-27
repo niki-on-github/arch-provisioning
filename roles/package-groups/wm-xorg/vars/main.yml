@@ -7,10 +7,12 @@ wm_xorg:
     - dunst
     - feh
     - maim
+    - picom
     - rofi
     - sxiv
     - xautolock
     - xclip
+    - xcolor
     - xdialog
     - xdo
     - xdotool
@@ -19,7 +21,5 @@ wm_xorg:
   aur_packages:
     - dragon-drop
     - i3lock-color
-    - picom-jonaburg-git
-    - xcolor
     - xidlehook
     - xob
