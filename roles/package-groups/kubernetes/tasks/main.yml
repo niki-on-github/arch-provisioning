@@ -1,0 +1,7 @@
+---
+
+- name: "Install kubernetes package group"
+  include_role:
+    name: system/install
+  vars:
+    packages: "{{ kubernetes.packages }}"
