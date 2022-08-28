@@ -1,49 +1,25 @@
 ---
 
 - block:
-  # setup
-
-  - name: "Set packages to None"
-    set_fact:
-      packages: null
-    when: packages is not defined
-
-  - name: "Set AUR packages to None"
-    set_fact:
-      aur_packages: null
-    when: aur_packages is not defined
-
-  - name: "Set pip packages to None"
-    set_fact:
-      pip_packages: null
-    when: pip_packages is not defined
-
-  - name: "Set services to None"
-    set_fact:
-      services: null
-    when: services is not defined
-
-
-- block:
   # root install
 
   - name: 'Install packages'
     package:
       name: "{{ packages }}"
       state: latest
-    when: packages
+    when: packages is defined and packages
 
   - name: "Install AUR packages"
     kewlfft.aur.aur:
       name: "{{ aur_packages }}"
     become_user: "{{ username }}"
-    when: aur_packages
+    when: aur_packages is defined and aur_packages
 
   - name: 'Install pip packages for root'
     pip:
       name: "{{ item }}"
     with_items: "{{ pip_packages }}"
-    when: pip_packages
+    when: pip_packages is defined and pip_packages
 
   - name: 'Enable systemd services'
     systemd:
@@ -51,7 +27,7 @@
       state: 'started'
       enabled: 'yes'
     with_items: "{{ services }}"
-    when: services
+    when: services is defined and services
 
   become: yes
 
@@ -63,4 +39,4 @@
     pip:
       name: "{{ item }}"
     with_items: "{{ pip_packages }}"
-    when: pip_packages
+    when: pip_packages is defined and pip_packages
