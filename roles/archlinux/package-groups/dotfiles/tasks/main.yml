@@ -1,0 +1,48 @@
+---
+- block:
+
+  - name: "Get user home stat"
+    stat:
+      path: "/home/{{ username }}"
+    register: user_home
+
+  - name: "Throw error if user home not exists"
+    fail:
+      msg: "/home/{{ username }} does not exists"
+    when: not user_home.stat.exists
+
+  - name: 'Install zsh'
+    package:
+      name: "zsh"
+      state: latest
+    become: yes
+
+  - name: "Clone dotfiles git repository"
+    git:
+      repo: "https://{{ git_user|urlencode() }}:{{ git_password|urlencode() }}@{{ dotfiles_repo_url }}"
+      dest: "/home/{{ username }}/.dotfiles"
+      update: yes
+      recursive: yes
+      bare: yes
+      force: yes
+    environment:
+      # TODO: we should add our ca cert to system berfore cloning our dotfiles
+      - GIT_SSL_NO_VERIFY: "true"
+
+  - name: "Checkout master branch"
+    command:
+      cmd: git --git-dir=/home/{{ username }}/.dotfiles --work-tree=/home/{{ username }} checkout -f master
+
+  - name: "Set status.showUntrackedFiles=no"
+    command:
+      cmd: git --git-dir=/home/{{ username }}/.dotfiles --work-tree=/home/{{ username }} config --local status.showUntrackedFiles no
+
+  - name: "Initialize and Update dotfiles submodules"
+    command:
+      cmd: git --git-dir=/home/{{ username }}/.dotfiles --work-tree=/home/{{ username }} submodule update --init
+
+  - name: "change user shell to zsh"
+    user:
+      name: "{{ username }}"
+      shell: /usr/bin/zsh
+    become: yes

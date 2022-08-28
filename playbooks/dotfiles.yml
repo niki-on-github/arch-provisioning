@@ -1,0 +1,9 @@
+---
+- hosts: archlinux
+  become: no
+  vars_prompt:
+    - name: git_password
+      private: yes
+  roles:
+    - role: archlinux/package-groups/dotfiles
+

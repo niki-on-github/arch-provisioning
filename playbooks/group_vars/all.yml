@@ -1,1 +1,3 @@
 username: "arch"
+git_user: "root"
+dotfiles_repo_url: "git.server01.lan/r/dotfiles.git"

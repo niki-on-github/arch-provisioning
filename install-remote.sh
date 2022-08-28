@@ -24,7 +24,7 @@ EOF
 
 error() {
     echo -e "${RED}ERROR: $1${NC}\n"
-    usage 1
+    exit 1
 }
 
 IP="$1"

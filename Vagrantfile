@@ -44,4 +44,5 @@ Vagrant.configure("2") do |config|
     ansible.groups = { "archlinux" => ["default"] }
     ansible.extra_vars = { vagrant: true, username: "vagrant" }
   end
+
 end
