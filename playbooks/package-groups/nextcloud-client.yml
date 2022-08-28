@@ -2,6 +2,6 @@
 - hosts: archlinux
   roles:
 
-    - role: system/precondition
+    - role: archlinux/precondition
     - role: package-groups/nextcloud-client
 

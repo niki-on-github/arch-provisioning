@@ -2,7 +2,7 @@
 
 - name: "Install wm-qtile package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ wm_qtile.packages }}"
     pip_packages: "{{ wm_qtile.pip_packages }}"

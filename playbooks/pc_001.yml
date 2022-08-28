@@ -1,6 +1,8 @@
 ---
 - hosts: archlinux
   roles:
+    - role: archlinux/precondition
+
     - role: package-groups/apps
     - role: package-groups/base
     - role: package-groups/breeze
@@ -17,5 +19,4 @@
     - role: package-groups/wm-xorg
     - role: package-groups/xorg
     - role: package-groups/zsh
-    - role: system/precondition
 

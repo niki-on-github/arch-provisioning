@@ -2,7 +2,7 @@
 
 - name: "Install vbox-host package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ vbox_host.packages }}"
     aur_packages: "{{ vbox_host.aur_packages }}"

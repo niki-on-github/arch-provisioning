@@ -2,7 +2,7 @@
 
 - name: "Install modern-unix package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ modern_unix.packages }}"
 

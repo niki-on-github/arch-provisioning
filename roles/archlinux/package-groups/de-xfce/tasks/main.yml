@@ -2,7 +2,7 @@
 
 - name: "Install de-xfce package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ de_xfce.packages }}"
     services: "{{ de_xfce.services }}"

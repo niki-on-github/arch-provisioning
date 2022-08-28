@@ -1,6 +1,8 @@
 ---
 - hosts: archlinux
   roles:
+    - role: archlinux/precondition
+
     # - role: package-groups/kvm-host wait until [#12843](https://github.com/hashicorp/vagrant/issues/12843) is fixed
     - role: package-groups/apps
     - role: package-groups/base
@@ -19,5 +21,4 @@
     - role: package-groups/wm-xorg
     - role: package-groups/xorg
     - role: package-groups/zsh
-    - role: system/precondition
 

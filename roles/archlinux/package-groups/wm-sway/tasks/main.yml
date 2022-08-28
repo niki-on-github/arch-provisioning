@@ -2,6 +2,6 @@
 
 - name: "Install wm-sway package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ wm_sway.packages }}"

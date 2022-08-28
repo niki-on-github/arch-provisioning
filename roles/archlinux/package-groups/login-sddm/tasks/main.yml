@@ -2,7 +2,7 @@
 
 - name: "Install login-sddm package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ login_sddm.packages }}"
 

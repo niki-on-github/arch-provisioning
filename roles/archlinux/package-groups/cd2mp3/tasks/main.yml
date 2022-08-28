@@ -2,6 +2,6 @@
 
 - name: "Install cd2mp3 package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ cd2mp3.packages }}"

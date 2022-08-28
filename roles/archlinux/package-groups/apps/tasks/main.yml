@@ -2,7 +2,7 @@
 
 - name: "Install apps package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ apps.packages }}"
     aur_packages: "{{ apps.aur_packages }}"

@@ -2,7 +2,7 @@
 
 - name: "Install vbox-guest package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ vbox_guest.packages }}"
     service: "{{ vbox_guest.service }}"

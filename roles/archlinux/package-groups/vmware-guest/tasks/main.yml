@@ -2,7 +2,7 @@
 
 - name: "Install vmware-guest package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ vmware_guest.packages }}"
     service: "{{ vmware_guest.service }}"

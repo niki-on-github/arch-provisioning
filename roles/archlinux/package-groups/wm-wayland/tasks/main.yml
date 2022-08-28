@@ -2,7 +2,7 @@
 
 - name: "Install wm-wayland package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ wm_wayland.packages }}"
     aur_packages: "{{ wm_wayland.aur_packages }}"

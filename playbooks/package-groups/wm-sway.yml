@@ -2,7 +2,7 @@
 - hosts: archlinux
   roles:
 
-    - role: system/precondition
+    - role: archlinux/precondition
     - role: package-groups/wm-base
     - role: package-groups/wm-wayland
     - role: package-groups/wm-sway

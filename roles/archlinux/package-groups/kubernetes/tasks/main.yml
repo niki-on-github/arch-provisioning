@@ -2,6 +2,6 @@
 
 - name: "Install kubernetes package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ kubernetes.packages }}"

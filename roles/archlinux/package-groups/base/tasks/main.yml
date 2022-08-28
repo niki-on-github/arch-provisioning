@@ -2,7 +2,7 @@
 
 - name: "Install base package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ base.packages }}"
     pip_packages: "{{ base.pip_packages }}"

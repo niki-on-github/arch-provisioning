@@ -2,7 +2,7 @@
 
 - name: "Install base-wm package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ wm_i3.packages }}"
     pip_packages: "{{ wm_i3.pip_packages }}"

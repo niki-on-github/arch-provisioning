@@ -2,7 +2,7 @@
 
 - name: "Install de-kde package group"
   include_role:
-    name: system/install
+    name: archlinux/install
   vars:
     packages: "{{ de_kde.packages }}"
 
