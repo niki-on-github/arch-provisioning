@@ -128,8 +128,6 @@
 
   - name: "Fetch Vagrant Plugin List for root"
     command: vagrant plugin list
-    args:
-      executable: /bin/bash
     environment:
       PATH: '/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:{{ ansible_env.PATH }}'
     register: vagrant_plugin_list
@@ -137,8 +135,6 @@
 
   - name: "Install vagrant-libvirt plugin for root"
     command: vagrant plugin install vagrant-libvirt
-    args:
-      executable: /bin/bash
     environment:
       PATH: '/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:{{ ansible_env.PATH }}'
     when: '"libvirt" not in vagrant_plugin_list.stdout'
@@ -158,8 +154,6 @@
 
   - name: "Fetch Vagrant Plugin List for user"
     command: vagrant plugin list
-    args:
-      executable: /bin/bash
     environment:
       PATH: '/home/{{ username }}/.nix-profile/bin:/nix/var/nix/profiles/default/bin:{{ ansible_env.PATH }}'
     register: vagrant_plugin_list
@@ -167,8 +161,6 @@
 
   - name: "Install vagrant-libvirt plugin for user"
     command: vagrant plugin install vagrant-libvirt
-    args:
-      executable: /bin/bash
     environment:
       PATH: '/home/{{ username }}/.nix-profile/bin:/nix/var/nix/profiles/default/bin:{{ ansible_env.PATH }}'
     when: '"libvirt" not in vagrant_plugin_list.stdout'
