@@ -28,6 +28,7 @@
       name:
         - openssl
         - python-pip
+        - python-setuptools
         - rustup
       state: latest
 
