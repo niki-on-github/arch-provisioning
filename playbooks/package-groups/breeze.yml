@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/breeze
+    - role: archlinux/package-groups/breeze
 

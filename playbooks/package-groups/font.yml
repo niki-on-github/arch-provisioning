@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/font
+    - role: archlinux/package-groups/font
 

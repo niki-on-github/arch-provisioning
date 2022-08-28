@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/cd2mp3
+    - role: archlinux/package-groups/cd2mp3
 

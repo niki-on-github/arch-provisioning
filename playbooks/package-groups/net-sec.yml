@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/net-sec
+    - role: archlinux/package-groups/net-sec
 

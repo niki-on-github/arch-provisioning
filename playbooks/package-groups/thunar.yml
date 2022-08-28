@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/thunar
+    - role: archlinux/package-groups/thunar
 

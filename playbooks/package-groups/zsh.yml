@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/zsh
+    - role: archlinux/package-groups/zsh
 

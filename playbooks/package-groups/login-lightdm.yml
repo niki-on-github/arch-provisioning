@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/login-lightdm
+    - role: archlinux/package-groups/login-lightdm
 

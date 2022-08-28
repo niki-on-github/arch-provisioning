@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/de-xfce
+    - role: archlinux/package-groups/de-xfce
 

@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/flatpak
+    - role: archlinux/package-groups/flatpak
 

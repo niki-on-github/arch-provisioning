@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/modern-unix
+    - role: archlinux/package-groups/modern-unix
 

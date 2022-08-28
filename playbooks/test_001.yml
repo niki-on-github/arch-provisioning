@@ -3,22 +3,22 @@
   roles:
     - role: archlinux/precondition
 
-    # - role: package-groups/kvm-host wait until [#12843](https://github.com/hashicorp/vagrant/issues/12843) is fixed
-    - role: package-groups/apps
-    - role: package-groups/base
-    - role: package-groups/breeze
-    - role: package-groups/disk-monitoring
-    - role: package-groups/docker
-    - role: package-groups/flatpak
-    - role: package-groups/font
-    - role: package-groups/latex
-    - role: package-groups/login-sddm
-    - role: package-groups/modern-unix
-    - role: package-groups/nix
-    - role: package-groups/printer
-    - role: package-groups/wm-base
-    - role: package-groups/wm-qtile
-    - role: package-groups/wm-xorg
-    - role: package-groups/xorg
-    - role: package-groups/zsh
+    # - role: archlinux/package-groups/kvm-host wait until [#12843](https://github.com/hashicorp/vagrant/issues/12843) is fixed
+    - role: archlinux/package-groups/apps
+    - role: archlinux/package-groups/base
+    - role: archlinux/package-groups/breeze
+    - role: archlinux/package-groups/disk-monitoring
+    - role: archlinux/package-groups/docker
+    - role: archlinux/package-groups/flatpak
+    - role: archlinux/package-groups/font
+    - role: archlinux/package-groups/latex
+    - role: archlinux/package-groups/login-sddm
+    - role: archlinux/package-groups/modern-unix
+    - role: archlinux/package-groups/nix
+    - role: archlinux/package-groups/printer
+    - role: archlinux/package-groups/wm-base
+    - role: archlinux/package-groups/wm-qtile
+    - role: archlinux/package-groups/wm-xorg
+    - role: archlinux/package-groups/xorg
+    - role: archlinux/package-groups/zsh
 

@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/kubernetes
+    - role: archlinux/package-groups/kubernetes
 

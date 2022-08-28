@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/vbox-guest
+    - role: archlinux/package-groups/vbox-guest
 

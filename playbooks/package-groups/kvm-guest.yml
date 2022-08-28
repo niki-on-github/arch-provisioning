@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/kvm-guest
+    - role: archlinux/package-groups/kvm-guest
 

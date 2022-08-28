@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/wm-base
+    - role: archlinux/package-groups/wm-base
 

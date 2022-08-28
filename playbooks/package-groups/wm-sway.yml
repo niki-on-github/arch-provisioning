@@ -3,7 +3,7 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/wm-base
-    - role: package-groups/wm-wayland
-    - role: package-groups/wm-sway
+    - role: archlinux/package-groups/wm-base
+    - role: archlinux/package-groups/wm-wayland
+    - role: archlinux/package-groups/wm-sway
 

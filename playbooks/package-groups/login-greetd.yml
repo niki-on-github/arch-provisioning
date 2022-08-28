@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/login-greetd
+    - role: archlinux/package-groups/login-greetd
 

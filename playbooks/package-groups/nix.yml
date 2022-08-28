@@ -3,5 +3,5 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/nix
+    - role: archlinux/package-groups/nix
 

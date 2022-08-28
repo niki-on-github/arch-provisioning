@@ -3,8 +3,8 @@
   roles:
 
     - role: archlinux/precondition
-    - role: package-groups/xorg
-    - role: package-groups/wm-base
-    - role: package-groups/wm-xorg
-    - role: package-groups/wm-i3
+    - role: archlinux/package-groups/xorg
+    - role: archlinux/package-groups/wm-base
+    - role: archlinux/package-groups/wm-xorg
+    - role: archlinux/package-groups/wm-i3
 
