@@ -2,3 +2,4 @@ kubernetes:
 
   packages:
     - kubectl
+    - helm
