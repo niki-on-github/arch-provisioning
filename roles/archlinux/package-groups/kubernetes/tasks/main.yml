@@ -5,3 +5,4 @@
     name: archlinux/install
   vars:
     packages: "{{ kubernetes.packages }}"
+    aur_packages: "{{ kubernetes.aur_packages }}"
