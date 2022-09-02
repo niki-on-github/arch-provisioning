@@ -3,6 +3,7 @@ kubernetes:
   packages:
     - kubectl
     - helm
+    - k9s
 
   aur_packages:
     - flux-bin
