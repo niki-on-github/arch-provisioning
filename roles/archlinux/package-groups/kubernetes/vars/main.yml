@@ -4,6 +4,7 @@ kubernetes:
     - kubectl
     - helm
     - k9s
+    - sops
 
   aur_packages:
     - flux-bin
