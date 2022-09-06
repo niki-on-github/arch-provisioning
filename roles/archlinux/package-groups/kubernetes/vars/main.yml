@@ -5,6 +5,7 @@ kubernetes:
     - helm
     - k9s
     - sops
+    - age
 
   aur_packages:
     - flux-bin
