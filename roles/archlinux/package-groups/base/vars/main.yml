@@ -46,6 +46,7 @@ base:
     - openvpn
     - p7zip
     - pkgfile
+    - powertop
     - pv
     - pyenv
     - python-pip
