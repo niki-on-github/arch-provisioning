@@ -11,6 +11,7 @@ base:
     - base-devel
     - bind-tools
     - bridge-utils
+    - cargo-outdated
     - cifs-utils
     - clang
     - compiler-rt
