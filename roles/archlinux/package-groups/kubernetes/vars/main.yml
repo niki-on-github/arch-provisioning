@@ -10,3 +10,5 @@ kubernetes:
   aur_packages:
     - flux-bin
     - go-task-bin
+    - kube-capacity-git
+    - virtctl-bin
