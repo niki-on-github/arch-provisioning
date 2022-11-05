@@ -7,11 +7,16 @@
     packages: "{{ nix.packages }}"
     services: "{{ nix.services }}"
 
+- name: "Get latest stable nix channel"
+  shell:
+    cmd: curl -s "https://nix-channels.s3.amazonaws.com/?delimiter=/" | grep -Eo '<Key>[^<]*' | grep -vE '(unstable|index|darwin|small|aarch64)' | sed 's/<Key>//g' | sort | tail -n 1 | tr -d '\n'
+  register: lastes_stable_channel
+
 
 - block:
   # root
 
-  - name: 'Add users to nix-users group'
+  - name: 'Add user {{ username }} to nix-users group'
     user:
       name: '{{ username }}'
       groups: 'nix-users'
@@ -33,22 +38,29 @@
       path: /etc/nix/nix.conf
       line: "max-jobs = auto"
 
-  - name: "Get latest stable nix channel"
-    shell:
-      cmd: curl -s "https://nix-channels.s3.amazonaws.com/?delimiter=/" | grep -Eo '<Key>[^<]*' | grep -vE '(unstable|index|darwin|small|aarch64)' | sed 's/<Key>//g' | sort | tail -n 1 | tr -d '\n'
-    register: lastes_stable_channel
-
   - name: "add nix-channel {{ lastes_stable_channel.stdout }}"
     shell:
-      cmd: nix-channel --add https://nixos.org/channels/{{ lastes_stable_channel.stdout }}
+      cmd: nix-channel --add https://nixos.org/channels/{{ lastes_stable_channel.stdout }} nixpkgs
 
   - name: "update nix-channel"
     shell:
       cmd: nix-channel --update
 
-  # TODO: nix without restart
-  - name: "Show nix info"
-    debug:
-      msg: "nix installation require restart to get a working nix-env"
-
   become: true
+
+- block:
+  # user
+
+  - name: "add nix-channel {{ lastes_stable_channel.stdout }}"
+    shell:
+      cmd: nix-channel --add https://nixos.org/channels/{{ lastes_stable_channel.stdout }} nixpkgs
+
+  - name: "update nix-channel"
+    shell:
+      cmd: nix-channel --update
+
+
+# TODO: nix without restart
+- name: "Show nix info"
+  debug:
+    msg: "nix installation require restart to get a working nix-env"
