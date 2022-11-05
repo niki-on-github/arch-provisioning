@@ -12,3 +12,4 @@ kubernetes:
     - go-task-bin
     - kube-capacity-git
     - virtctl-bin
+    - talosctl
