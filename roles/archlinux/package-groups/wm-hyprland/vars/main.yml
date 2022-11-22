@@ -8,3 +8,4 @@ wm_hyprland:
     - waybar-hyprland-git
     - hyprland-bin
     - hyprpicker-git
+    - hyprpaper-git
