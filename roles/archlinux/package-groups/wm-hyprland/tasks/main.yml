@@ -1,0 +1,8 @@
+---
+
+- name: "Install wm-hyprland package group"
+  include_role:
+    name: archlinux/install
+  vars:
+    packages: "{{ wm_hyprland.packages }}"
+    aur_packages: "{{ wm_hyprland.aur_packages }}"

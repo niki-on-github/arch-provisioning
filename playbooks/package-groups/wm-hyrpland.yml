@@ -1,0 +1,9 @@
+---
+- hosts: archlinux
+  roles:
+
+    - role: archlinux/precondition
+    - role: archlinux/package-groups/wm-base
+    - role: archlinux/package-groups/wm-wayland
+    - role: archlinux/package-groups/wm-hyprland
+
