@@ -8,14 +8,15 @@ apps:
     - flameshot
     - freerdp
     - gimp
-    - handbrake-cli
     - handbrake
+    - handbrake-cli
     - libvncserver
     - meld
     - mkvtoolnix-cli
     - mkvtoolnix-gui
     - mpv
     - obs-studio
+    - thunderbird
 
 
   aur_packages:
