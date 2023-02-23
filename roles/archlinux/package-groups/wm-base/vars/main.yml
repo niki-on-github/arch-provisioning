@@ -103,7 +103,7 @@ wm_base:
 
   aur_packages:
     - lf-bin
-    - j4-dmenu-desktop
+    - nsxiv
 
 
   pip_packages:
