@@ -9,7 +9,6 @@ wm_xorg:
     - maim
     - picom
     - rofi
-    - sxiv
     - xautolock
     - xclip
     - xcolor
