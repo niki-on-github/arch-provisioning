@@ -104,6 +104,7 @@ wm_base:
   aur_packages:
     - lf-bin
     - nsxiv
+    - termscp-bin
 
 
   pip_packages:
